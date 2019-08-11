@@ -13,9 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
-        android:name=".CircleCiAndroidApplication">
+        android:name=".CircleCiAndroidApplication"
+        android:screenOrientation="locked">
 
-        <activity android:name=".usecases.onboarding.Onboarding">
+        <activity android:name=".usecases.onboarding.OnboardingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

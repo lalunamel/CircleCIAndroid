@@ -7,7 +7,7 @@ android {
     buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "net.codysehl.circleciandroid"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -18,6 +18,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -35,6 +38,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha03' // Coroutines Lifecycle Scope
 
     implementation 'com.jakewharton.timber:timber:4.7.1' // Logging
+
+    def lifecycle_version = "2.0.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version" // Android ViewModel, Lifecycle, LiveData
+    implementation "android.arch.lifecycle:common-java8:$lifecycle_version" // DefaultLifecycleObserver
+    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
 
     testImplementation 'junit:junit:4.12'
 

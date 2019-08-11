@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Circle CI Android</string>
+    <string name="onboarding_copy">Create an API key to use with this Android client</string>
+    <string name="onboarding_button">Create API key</string>
 </resources>
