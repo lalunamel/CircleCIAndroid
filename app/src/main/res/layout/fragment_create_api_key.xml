@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="net.codysehl.circleciandroid.usecases.onboarding.createapikey.CreateApiKeyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/circleci_black"
+        tools:context=".usecases.onboarding.OnboardingActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/activity_onboarding_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <ImageView
+            android:id="@+id/activity_onboarding_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/circle_icon_white"
+            app:layout_constraintBottom_toBottomOf="@id/activity_onboarding_top_guideline"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/activity_onboarding_top_guideline"
+            tools:layout_editor_absoluteY="200dp" />
+
+        <TextView
+            android:id="@+id/activity_onboarding_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="32dp"
+            android:text="@string/onboarding_copy"
+            android:textColor="@color/circleci_white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_onboarding_logo" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@color/circleci_green"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/onboarding_button"
+            android:textColor="@color/circleci_white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_onboarding_text"
+            android:onClick="@{() -> { viewModel.onCreateApiKeyClicked() }}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
