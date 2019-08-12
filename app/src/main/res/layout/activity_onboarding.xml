@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewModel"
             type="net.codysehl.circleciandroid.usecases.onboarding.OnboardingViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/circleci_black"
         tools:context=".usecases.onboarding.OnboardingActivity">
 
         <androidx.viewpager.widget.ViewPager
+            android:id="@+id/activity_onboarding_view_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/activity_onboarding_view_pager">
+            android:layout_height="match_parent" />
 
-        </androidx.viewpager.widget.ViewPager>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/activity_onboarding_tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:tabBackground="@drawable/onboarding_dot_state_list"
+            app:tabIndicatorHeight="0dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

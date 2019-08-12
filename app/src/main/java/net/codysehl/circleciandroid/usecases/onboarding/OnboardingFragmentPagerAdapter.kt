@@ -11,6 +11,6 @@ class OnboardingFragmentPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(
     }
 
     override fun getCount(): Int {
-        return 1
+        return 2
     }
 }
