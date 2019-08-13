@@ -8,6 +8,8 @@ import com.google.android.material.tabs.TabLayout
 import net.codysehl.circleciandroid.R
 import net.codysehl.circleciandroid.databinding.ActivityOnboardingBinding
 import net.codysehl.circleciandroid.usecases.onboarding.createapikey.CreateApiKeyPagerDelegate
+import net.codysehl.circleciandroid.usecases.onboarding.enterapikey.EnterApiKeyFragment
+import net.codysehl.circleciandroid.usecases.onboarding.enterapikey.EnterApiKeyPagerDelegate
 import net.codysehl.circleciandroid.utils.fragmentpageradapter.SimpleFragmentPagerAdapter
 
 class OnboardingActivity : AppCompatActivity() {
@@ -27,7 +29,7 @@ class OnboardingActivity : AppCompatActivity() {
             supportFragmentManager,
             listOf(
                 CreateApiKeyPagerDelegate(),
-                CreateApiKeyPagerDelegate()
+                EnterApiKeyPagerDelegate()
             )
         )
         val tabLayout = binding.root.findViewById<TabLayout>(R.id.activity_onboarding_tab_layout)
