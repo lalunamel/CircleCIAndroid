@@ -7,6 +7,8 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import net.codysehl.circleciandroid.R
 import net.codysehl.circleciandroid.databinding.ActivityOnboardingBinding
+import net.codysehl.circleciandroid.usecases.onboarding.createapikey.CreateApiKeyPagerDelegate
+import net.codysehl.circleciandroid.utils.fragmentpageradapter.SimpleFragmentPagerAdapter
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -15,10 +17,19 @@ class OnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = DataBindingUtil.setContentView<ActivityOnboardingBinding>(this, R.layout.activity_onboarding)
+        val binding = DataBindingUtil.setContentView<ActivityOnboardingBinding>(
+            this,
+            R.layout.activity_onboarding
+        )
 
         val viewPager = binding.root.findViewById<ViewPager>(R.id.activity_onboarding_view_pager)
-        viewPager.adapter = OnboardingFragmentPagerAdapter(supportFragmentManager)
+        viewPager.adapter = SimpleFragmentPagerAdapter(
+            supportFragmentManager,
+            listOf(
+                CreateApiKeyPagerDelegate(),
+                CreateApiKeyPagerDelegate()
+            )
+        )
         val tabLayout = binding.root.findViewById<TabLayout>(R.id.activity_onboarding_tab_layout)
         tabLayout.setupWithViewPager(viewPager)
 
