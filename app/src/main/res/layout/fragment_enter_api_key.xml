@@ -35,14 +35,14 @@
             tools:layout_editor_absoluteY="200dp" />
 
         <TextView
-            android:id="@+id/fragment_enter_api_key_text"
-            android:layout_width="wrap_content"
+            android:id="@+id/fragment_create_api_key_text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"
-            android:layout_marginRight="32dp"
+            android:gravity="center"
             android:text="@string/onboarding_enter_api_key"
             android:textColor="@color/circleci_white"
+            app:layout_constraintBottom_toTopOf="@id/fragment_enter_api_key_text_entry"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fragment_enter_api_key_logo" />
@@ -52,9 +52,9 @@
             android:layout_width="0dp"
             android:layout_height="44dp"
             android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="32dp"
-            android:background="@color/circleci_white"
+            android:background="#EDEDED"
             android:ellipsize="end"
             android:onTextChanged="@{(text, start, before, count) -> { viewModel.onApiKeyTextChanged(text) }}"
             android:paddingLeft="16dp"
@@ -63,25 +63,51 @@
             android:textColor="@color/circleci_dark_gray"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragment_enter_api_key_text"
-            tools:text="123acb123acb123acb123acb123acb123acb"/>
-
+            app:layout_constraintTop_toBottomOf="@id/fragment_create_api_key_text"
+            tools:text="@string/api_key"
+            android:textCursorDrawable="@drawable/color_cursor"/>
 
         <Button
+            android:id="@+id/fragment_enter_api_key_save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="32dp"
             android:background="@color/circleci_green"
-            android:onClick="@{() -> { viewModel.onSaveApiKeyClicked() }}"
+            android:enabled="@{viewModel.enableFields}"
+            android:onClick="@{() -> viewModel.onSaveApiKeyClicked()}"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:text="@string/save"
             android:textColor="@color/circleci_white"
+            android:visibility="@{viewModel.saveButtonVisibility}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragment_enter_api_key_text_entry" />
+            app:layout_constraintTop_toBottomOf="@id/fragment_enter_api_key_text_entry"
+            tools:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/circleci_green"
+            android:gravity="center"
+            android:visibility="@{viewModel.loadingSpinnerVisibility}"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_enter_api_key_save_button"
+            app:layout_constraintLeft_toLeftOf="@+id/fragment_enter_api_key_save_button"
+            app:layout_constraintRight_toRightOf="@+id/fragment_enter_api_key_save_button"
+            app:layout_constraintTop_toTopOf="@+id/fragment_enter_api_key_save_button">
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                android:indeterminateTint="@color/circleci_white" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

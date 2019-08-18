@@ -13,3 +13,6 @@ fun <T> LiveData<T>.observeNotNull(owner: LifecycleOwner, observer: (T) -> Unit)
         }
     })
 }
+
+val <T> T.exhaustive: T
+    get() = this

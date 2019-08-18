@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.1"
+    compileSdkVersion 28
+    buildToolsVersion '29.0.0'
     defaultConfig {
         applicationId "net.codysehl.circleciandroid"
         minSdkVersion 24
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -45,6 +45,8 @@ dependencies {
     testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
 
     implementation 'com.google.android.material:material:1.0.0' // TabLayout, and other things I suppose
+
+    implementation 'br.com.simplepass:loading-button-android:2.1.5' // Button with progress indicator
 
     testImplementation 'junit:junit:4.12'
 

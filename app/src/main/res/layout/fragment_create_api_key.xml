@@ -54,7 +54,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginRight="32dp"
             android:background="@color/circleci_green"
-            android:onClick="@{() -> { viewModel.onCreateApiKeyClicked() }}"
+            android:onClick="@{() -> viewModel.onCreateApiKeyClicked() }"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:text="@string/onboarding_create_api_key"

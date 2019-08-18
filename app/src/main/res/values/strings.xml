@@ -2,6 +2,9 @@
     <string name="app_name">Circle CI Android</string>
     <string name="onboarding_create_api_key_instructions">Create an API key to use with this Android client</string>
     <string name="onboarding_create_api_key">Create API key</string>
-    <string name="onboarding_enter_api_key">Enter your API key</string>
+    <string name="onboarding_enter_api_key">Save your API key</string>
+    <string name="api_key">API Key</string>
     <string name="save">Save</string>
+    <string name="invalid_api_key">Invalid API Key</string>
+    <string name="unable_to_authenticate_with_api_key">Unable to authenticate with API Key</string>
 </resources>

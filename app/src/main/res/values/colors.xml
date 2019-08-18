@@ -10,4 +10,5 @@
     <color name="circleci_blue">#36D4ED</color>
     <color name="circleci_green">#04AA51</color>
     <color name="circleci_white">#ffffff</color>
+    <color name="gray">#303030</color>
 </resources>
